@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+ 	<title>Favorite TV Shows</title>
+ </head>
+ <body>
+
+ <div id="game"> 
+ 		
+ 		<p id="info"></p>
+
+
+
+ </div>
+ <script type="text/javascript">
+
+ 
+
+
+
+ 		var userGuess = ("");
+ 		var guessNumber = ("");
+		var wins = 0;
+		var losses = 0;
+		var alphabet = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+		var psychic =("You are psycic!");
+		var almostpsy = ("You are almost psychic");
+		var notpsy = ("You are not psychic.");
+		var playAgain = 1
+		var quit = 2
+
+
+
+	document.write("This is the Psychic Game");
+	document.write("<br>")
+	document.write("Guess any letter of the alphabet and see if you are psychic!");
+	document.write("<br>")
+	document.write("wins: "+wins+" ");
+	document.write("<br>")
+ 	document.write("losses: " + losses+ " ");
+
+
+
+
+
+	
+	var program = document.onkeyup = function(event) {
+ 			userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+ 			guessNumber = alphabet[Math.floor(Math.random() * 26)];
+			console.log(userGuess)
+				document.write("user guess: " + userGuess+" ");
+				document.write("<br>")
+ 				document.write("computer guess: " + guessNumber);
+ 				document.write("<br>")
+
+
+ 					if(userGuess==guessNumber){
+ 						wins++;
+ 						document.write(psychic);
+ 						document.write("<br>")
+ 						document.write("wins: "+wins);
+ 						document.write("<br>")
+ 						document.write("losses: "+losses);
+ 						program()
+ 					}
+ 					//else if(userGuess==guessNumber-1||guessNumber+1){
+ 						//losses=losses +1;
+ 						//document.write(almostpsy)
+ 						//document.write("<br>")
+ 						//document.write("wins: "+ wins);
+ 						//document.write("<br>")
+ 						//document.write("losses: "+ losses);}
+ 					else if(1 == userGuess) {
+ 						console.log(userGuess);
+ 						program()
+ 					}
+ 					else{
+
+
+ 						losses++;
+ 						document.write(notpsy);
+ 						document.write("<br>")
+ 						document.write("wins: "+ wins);
+ 						document.write("<br>")
+ 						document.write("losses: "+losses);
+ 						program()
+ 					}
+
+ 					document.write("<br>")
+ 					document.write("press 1 to continue playing 2 to quit")
+
+ 
+ 					
+}
+ 				//document.getElementById("info").innerHTML = 
+		
+						//"<p>wins: " + wins + "</p>" + 
+						//"<p>losses: " + losses + "</p>";
+
+ 					
+ 					
+
+
+ 				
+ 
+
+
+
+ 
+
+
+</script>
+
+
+
+
+
+ 
+ </script>
+ </body>
+ </html>
